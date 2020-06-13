@@ -1,0 +1,26 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# MacOS Files
+*.DS_Store
+
+# Secure Certificates
+*.pem
+
+# VSCode files
+*.vscode/
+*.code-workspace
+
+# Python stuff
+__pycache__
+.pytest_cache
+*.py[co]
+
+# PyCharm stuff
+.idea/
+
+.terraform-version
