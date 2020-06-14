@@ -27,7 +27,7 @@ spec:
           httpGet:
             path: /healthz
             port: 8181
-        command: ["sh", "-c", "app -port=8080"]
+        command: ["sh", "-c", "app -port=8181"]
         ports:
-        - name: backend
+        - name: cicdapp-prod
           containerPort: 8181
