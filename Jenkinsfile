@@ -47,9 +47,11 @@ spec:
       steps {
         container('python') {
           sh """
+            ls -lah
             ln -s `pwd` /src
             cd /src
-            python test.py
+            ls -lah
+            # python test.py
           """
         }
       }
