@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: cicdapp
+  name: dev-cicdapp
 spec:
   type: LoadBalancer
   ports:
@@ -11,3 +11,4 @@ spec:
     protocol: TCP
   selector:
     app: cicdapp
+    env: dev

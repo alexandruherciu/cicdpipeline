@@ -1,0 +1,32 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: cicdapp-dev
+spec:
+  replicas:
+  selector:
+      matchLabels:
+          app: cicdapp
+          env: dev
+  template:
+    metadata:
+      name: cicdapp
+      labels:
+        app: cicdapp
+        env: dev
+    spec:
+      containers:
+      - name: cicdapp
+        image: gcr.io/gke-test-279908/cicdapp:v.11
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "100m"
+        imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8181
+        ports:
+        - name: cicdapp
+          containerPort: 8181

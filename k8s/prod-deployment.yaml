@@ -1,22 +1,22 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: cicdapp
+  name: cicdapp-prod
 spec:
-  replicas:
+  replicas: 2
   selector:
       matchLabels:
           app: cicdapp
-          env: dev
+          env: prod
   template:
     metadata:
-      name: cicdapp
+      name: backend
       labels:
         app: cicdapp
-        env: dev
+        env: prod
     spec:
       containers:
-      - name: cicdapp
+      - name: cicdappcontainer
         image: gcr.io/gke-test-279908/cicdapp:v.11
         resources:
           limits:
@@ -27,6 +27,7 @@ spec:
           httpGet:
             path: /healthz
             port: 8181
+        command: ["sh", "-c", "app -port=8080"]
         ports:
-        - name: cicdapp
+        - name: backend
           containerPort: 8181
