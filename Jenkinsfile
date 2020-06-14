@@ -60,4 +60,7 @@ spec:
           sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} ."
         }
       }
-    }
+    
+   }
+  }
+}
