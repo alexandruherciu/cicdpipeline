@@ -49,9 +49,9 @@ spec:
           sh """
             ls -lah
             ln -s `pwd` /src
-            cd /src
+            cd src
             ls -lah
-            # python test.py
+            python test.py
           """
         }
       }
