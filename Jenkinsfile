@@ -24,8 +24,8 @@ spec:
   # Use service account that can deploy to all namespaces
   serviceAccountName: cd-jenkins
   containers:
-  - name: golang
-    image: golang:1.10
+  - name: python
+    image: python:3.6
     command:
     - cat
     tty: true
