@@ -64,13 +64,12 @@ spec:
       }
     
    }
-       stage('Deploy Canary') {
-      // Canary branch
-      when { branch 'canary' }
+       stage('Deploy Dev') {
+      //when { branch 'dev' }
       steps {
         container('kubectl') {
-          // Change deployed image in canary to the one we just built
-          sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${IMAGE_TAG}#' ./k8s/dev-deployment.yaml")
+          // Changing image to the one we just built
+          sh("sed -i.bak 's#gcr.io/gke-test-279908/cicdapp:v.11#${IMAGE_TAG}#' ./k8s/dev-deployment.yaml")
           step([$class: 'KubernetesEngineBuilder', namespace:'dev', projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/dev-service.yaml', credentialsId: env.JENKINS_CRED, verifyDeployments: false])
           step([$class: 'KubernetesEngineBuilder', namespace:'dev', projectId: env.PROJECT, clusterName: env.CLUSTER, zone: env.CLUSTER_ZONE, manifestPattern: 'k8s/dev-deployment.yaml', credentialsId: env.JENKINS_CRED, verifyDeployments: true])
           sh("echo http://`kubectl --namespace=dev get service/${FE_SVC_NAME} -o jsonpath='{.status.loadBalancer.ingress[0].ip}'` > ${FE_SVC_NAME}")
