@@ -10,13 +10,13 @@ spec:
           env: dev
   template:
     metadata:
-      name: frontend
+      name: cicdapp
       labels:
         app: cicdapp
         env: dev
     spec:
       containers:
-      - name: frontend
+      - name: cicdapp
         image: gcr.io/gke-test-279908/cicdapp
         resources:
           limits:
