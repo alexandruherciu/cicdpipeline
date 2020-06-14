@@ -2,7 +2,7 @@ pipeline {
 
   environment {
     PROJECT = "gke-test-279908"
-    APP_NAME = "webapp"
+    APP_NAME = "cicdapp"
     FE_SVC_NAME = "${APP_NAME}-frontend"
     CLUSTER = "jenkins-cd"
     CLUSTER_ZONE = "us-central1-a"
