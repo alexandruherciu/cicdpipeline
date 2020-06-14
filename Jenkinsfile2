@@ -51,6 +51,7 @@ spec:
             ln -s `pwd` /src
             cd src
             ls -lah
+            echo "Don't forget to create the unit test"
             python test.py
           """
         }
