@@ -1,11 +1,11 @@
 pipeline {
 
   environment {
-    PROJECT = "gke-test-279908"
+    PROJECT = "southern-shard-265012"
     APP_NAME = "cicdapp"
     FE_SVC_NAME = "${APP_NAME}"
-    CLUSTER = "jenkins-cd"
-    CLUSTER_ZONE = "us-central1-a"
+    CLUSTER = "alextest"
+    CLUSTER_ZONE = "europe-west2-a"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}:v.${env.TAGVERSION}"
     JENKINS_CRED = "${PROJECT}"
   }
