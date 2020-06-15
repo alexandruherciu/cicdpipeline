@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: cicdapp
-        image: gcr.io/gke-test-279908/cicdapp:v.11
+        image: gcr.io/southern-shard-265012/cicdapp:v.11
         resources:
           limits:
             memory: "500Mi"
