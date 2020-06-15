@@ -1,3 +1,20 @@
-from flask import Flask
-from app import test
+from app import app
+import unittest
 
+class BasicTestCase(unittest.TestCase):
+
+    def test_home(self):
+            tester = app.test_client(self)
+            response = tester.get('/', content_type='html/text')
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.data, b'Hello World')
+
+
+    def test_test(self):
+            tester = app.test_client(self)
+            response = tester.get('/test', content_type='html/text')
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.data, b'Success')
+
+if __name__ == '__main__':
+    unittest.main()

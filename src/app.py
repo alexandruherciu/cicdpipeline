@@ -8,7 +8,7 @@ app = Flask(__name__)             # create an app instance
 
 @app.route("/")                   # at the end point /
 def hello():                      # call method hello
-    return "Hello World!"         # which returns "hello world"
+    return "Hello World"         # which returns "hello world"
 
 @app.route("/intense")                   # at the end point /
 def cpustress():                      # call method cpustress
