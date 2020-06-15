@@ -23,7 +23,7 @@ def healthz():                    #
 
 @app.route("/test")               # at the end point /test 
 def test():                       # call method hello
-    return "Success123"              # which returns "success"
+    return "Success"              # which returns "success"
 
 if __name__ == "__main__":        # on running python app.py
     app.run(host="0.0.0.0",port='8181')                     # run the flask app on all interfaces on port 8181
