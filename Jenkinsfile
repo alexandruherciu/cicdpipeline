@@ -47,6 +47,7 @@ spec:
       steps {
         container('python') {
           sh """
+            pip install flask
             ls -lah
             ln -s `pwd` /src
             cd src
