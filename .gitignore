@@ -23,4 +23,6 @@ __pycache__
 # PyCharm stuff
 .idea/
 
+# ignore terraform folder
+terraform
 .terraform-version
